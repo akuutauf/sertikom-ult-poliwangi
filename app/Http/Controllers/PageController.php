@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\Admin;
 use App\Models\Berkas;
 use App\Models\Divisi;
@@ -16,15 +17,19 @@ use App\Models\Skor;
 use App\Models\Survei;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class PageController extends LoggingController
 {
     public function home_page()
     {
+        $this->logFunctionEntry(); // menggunakan fungsi logging
+
         return view('pages.client.home');
     }
 
     public function admin_page()
     {
+        $this->logFunctionEntry(); // menggunakan fungsi logging
+
         // inisialisasi variabel
         $all_progress_pengajuan = ProgressPengajuan::all();
         $pengulas_count = Saran::count();

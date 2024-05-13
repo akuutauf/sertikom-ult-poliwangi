@@ -51,6 +51,7 @@ return [
     */
 
     'channels' => [
+        // logginng yang digunakan adalah stact dengan channel single
         'stack' => [
             'driver' => 'stack',
             'channels' => ['single'],
